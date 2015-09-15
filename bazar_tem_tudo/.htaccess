@@ -1,0 +1,4 @@
+<Files "cabecalho.inc">
+Order Allow,Deny
+Deny from all
+</Files>

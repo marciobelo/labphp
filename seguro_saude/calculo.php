@@ -43,7 +43,7 @@
 
       <h2>Confira a cotação do seu seguro</h2>
 
-      <p>Sr(a).<?= htmlentities($nome); ?> seu seguro está cotado em <?= $premio ?></p>
+      <p>Sr(a).<?= htmlentities($nome); ?> seu seguro está cotado em <?= money_format('%=*^-14#8.2i',$premio) ?></p>
 
     </div>
   </body>
