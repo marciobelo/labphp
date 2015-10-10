@@ -1,3 +1,4 @@
+drop database if exists bazar;
 create database bazar;
 use bazar;
 create table categoria

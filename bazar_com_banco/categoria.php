@@ -6,17 +6,12 @@
 	}
 
 
-	$pdo = new PDO('mysql:host=localhost;dbname=bazar', 'root', 'vertrigo');
+	$pdo = new PDO('mysql:host=localhost;dbname=bazar;charset=utf8mb4', 'root', 'vertrigo');
 
 	$statement = $pdo->query("SELECT id_categoria,descricao FROM categoria");
 
+	$categorias = $statement->fetchAll();
 
-	$categorias = array();
-
-	foreach( $statement as $row )
-	{
-		$categorias[] = $row;
-	}
 ?>
 <html>
 <head>
