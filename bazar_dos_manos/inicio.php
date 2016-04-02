@@ -3,6 +3,7 @@
 
 	$logado = isset( $_SESSION["usuario"] );
 
+	date_default_timezone_set('America/Sao_Paulo');
 	$d = date("H");
 	if( $d < 12 ) $saudacao = "Bom dia";
 	elseif ($d < 17) $saudacao = "Boa tarde";
@@ -21,17 +22,17 @@
 
 		<?php if( $logado ) { ?>
 		<span><?= $saudacao . ',' . $_SESSION["usuario"] ?></span>
-		<?php } else { 
+		<?php } else {
 				if( isset( $msgErro ) ) {
 		?>
 		<p style="color: red;"><?= $msgErro ?></p>
-		<?php	} ?> 
+		<?php	} ?>
 		<form method="post" action="abrir_sessao.php">
 			Login: <input type="text" name="login" /><br/>
 			Senha: <input type="password" name="senha" /><br/>
 			<button type="submit">Entrar</button>
 		</form>
-		<?php } ?>			
+		<?php } ?>
 	</div>
 
 	<?php require_once("rodape.inc"); ?>
