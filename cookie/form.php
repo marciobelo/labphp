@@ -18,8 +18,8 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="nomeCompleto">Nome Completo</label>
           <div class="col-sm-10">
-            <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" 
-				value="<?= $_COOKIE['nome_cookie'] ?>"  />
+            <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control"
+				value="<?php if(isset($_COOKIE['nome_cookie'])) echo $_COOKIE['nome_cookie']; else echo ''; ?>"  />
           </div>
         </div>
 
