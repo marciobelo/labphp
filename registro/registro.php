@@ -1,19 +1,20 @@
 <?php
 
   // obtem dados do formulário html
-  $nomeCompleto = $_POST["nomeCompleto"];
-  $senha = $_POST["senha"];
+  $nomeCompleto = filter_input(INPUT_POST, "nomeCompleto", FILTER_SANITIZE_STRING);
+  $senha = filter_input(INPUT_POST, "senha", FILTER_SANITIZE_STRING);
 
-  if( isset($_POST["aceitaLista"]) )
+  
+  if( filter_input(INPUT_POST, "aceitaLista"))
   {
     $aceitaLista = true;
   } else {
     $aceitaLista = false;
   }
 
-  $sexo = $_POST["sexo"];
-  $tecnologias = $_POST["tecnologias"];
-  $uf = $_POST["uf"];
+  $sexo = filter_input(INPUT_POST, "sexo", FILTER_SANITIZE_STRING);
+  $tecnologias = filter_input(INPUT_POST, "tecnologias", FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
+  $uf = filter_input(INPUT_POST, "uf", FILTER_SANITIZE_STRING);
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +34,7 @@
       <table class="table table-bordered" style="width: 50%">
         <tr>
           <td>Nome completo</td>
-          <td><?= htmlentities($nomeCompleto); ?></td>
+          <td><?= $nomeCompleto; ?></td>
         </tr>
         <tr>
           <td>Aceita Lista de Notícias?</td>

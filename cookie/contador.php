@@ -1,5 +1,6 @@
 <?php
-$qtde = isset( $_COOKIE["vezes"] ) ? $_COOKIE["vezes"] + 1 : 1;
+$qtde = filter_input(INPUT_COOKIE, "vezes");
+$qtde = isset( $qtde ) ? $qtde + 1 : 1;
 setcookie("vezes", $qtde);
 ?>
 <!DOCTYPE html>
@@ -9,6 +10,6 @@ setcookie("vezes", $qtde);
     <title></title>
   </head>
   <body>
-      <p>Você já acessou essa página <?= $qtde; ?> vezes</p>
+      <p>Você já acessou essa página <?= $qtde; ?> vezesssss</p>
   </body>
 </html>
