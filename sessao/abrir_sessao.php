@@ -1,6 +1,6 @@
 <?php
  session_start();
- $_SESSION["nome"]=$_REQUEST["nome"];
+ $_SESSION["nome"] = filter_input(INPUT_POST,"nome", FILTER_SANITIZE_STRING);
 ?>
 <html>
 <body>
