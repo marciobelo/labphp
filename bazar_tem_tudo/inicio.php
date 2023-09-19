@@ -1,5 +1,5 @@
 <?php
-
+	date_default_timezone_set('America/Sao_Paulo');
 	$d = date("H");
 	if( $d < 12 ) $saudacao = "Bom dia";
 	elseif ($d < 17) $saudacao = "Boa tarde";
